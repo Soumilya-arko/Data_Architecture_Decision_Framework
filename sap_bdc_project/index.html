@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAP BDC — Architecture Decision Framework</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-brand">SAP <span>BDC</span> Framework</div>
+    <div class="nav-links">
+      <a href="#overview">Overview</a>
+      <a href="#comparison">Compare</a>
+      <a href="#wizard">Wizard</a>
+      <a href="#radar-section">Radar</a>
+      <a href="#mapping">Mapping</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div id="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="hero-dot"></span>
+        SAP Business Data Cloud · Capstone Project
+      </div>
+      <h1 class="hero-title">
+        Architecture<br><em>Decision Framework</em>
+      </h1>
+      <p class="hero-sub">
+        An interactive tool to compare, evaluate, and select the right data management approach — mapped to SAP BDC components.
+      </p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">6</span><span class="stat-label">Architectures</span></div>
+        <div class="stat"><span class="stat-num">12</span><span class="stat-label">Decision Criteria</span></div>
+        <div class="stat"><span class="stat-num">20+</span><span class="stat-label">SAP Components</span></div>
+      </div>
+      <div class="hero-cta">
+        <a href="#overview" class="btn btn-primary">Explore Architectures →</a>
+        <a href="#wizard" class="btn btn-outline">Take the Decision Wizard</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section id="overview">
+    <div class="section-header reveal">
+      <div class="section-tag">01 · Overview</div>
+      <h2 class="section-title">Six Data Management Approaches</h2>
+      <p class="section-desc">Click any card to expand detailed characteristics, SAP BDC components, pros and cons.</p>
+    </div>
+    <div class="arch-grid" id="archGrid"></div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section id="comparison">
+    <div class="section-header reveal">
+      <div class="section-tag">02 · Comparison Matrix</div>
+      <h2 class="section-title">Side-by-Side Analysis</h2>
+      <p class="section-desc">Key characteristics across all six architectures at a glance.</p>
+    </div>
+    <div class="compare-wrapper reveal">
+      <table id="compareTable"></table>
+    </div>
+  </section>
+
+  <!-- RADAR CHART -->
+  <section id="radar-section">
+    <div class="section-header reveal">
+      <div class="section-tag">03 · Visual Comparison</div>
+      <h2 class="section-title">Architecture Radar</h2>
+      <p class="section-desc">Toggle architectures to visually compare capability profiles.</p>
+    </div>
+    <div class="radar-controls" id="radarControls"></div>
+    <div class="radar-wrap reveal">
+      <canvas id="radarChart" aria-label="Radar chart comparing architecture capabilities" role="img"></canvas>
+    </div>
+  </section>
+
+  <!-- DECISION WIZARD -->
+  <section id="wizard">
+    <div class="section-header reveal">
+      <div class="section-tag">04 · Decision Wizard</div>
+      <h2 class="section-title">Find Your Architecture</h2>
+      <p class="section-desc">Answer six questions to get a scored recommendation for your context.</p>
+    </div>
+    <div class="wizard-wrap reveal">
+      <div class="wizard-top">
+        <span class="wizard-top-label" id="wizStepLabel">Step 1 of 6</span>
+        <div class="progress-track">
+          <div class="progress-fill" id="wizProgress" style="width:0%"></div>
+        </div>
+      </div>
+      <div class="wizard-body">
+        <div id="wizSteps"></div>
+        <div id="wizResult" style="display:none"></div>
+        <div class="wizard-nav" id="wizNav">
+          <button class="wbtn wbtn-ghost" id="wizBack" onclick="wizBack()" style="visibility:hidden">← Back</button>
+          <button class="wbtn wbtn-primary" id="wizNext" onclick="wizNext()">Next →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAPPING -->
+  <section id="mapping">
+    <div class="section-header reveal">
+      <div class="section-tag">05 · SAP BDC Mapping</div>
+      <h2 class="section-title">Architecture → SAP Components</h2>
+      <p class="section-desc">How SAP Business Data Cloud implements each architecture pattern.</p>
+    </div>
+    <div class="map-grid" id="mapGrid"></div>
+  </section>
+
+  <footer>
+    SAP Business Data Cloud · Architecture Decision Framework · Capstone Project 2026
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
